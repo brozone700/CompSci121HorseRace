@@ -11,10 +11,13 @@ def printTrack():
     for i in range(5):
         print("\n")
         for j in range(TrackLength):
-            if (j != horse[i]):
-                print(".")
+            if (horse[i] != TrackLength - 1):
+                if (j != horse[i]):
+                    print(".")
+                else:
+                    print(i)
             else:
-                print(i)
+                
 def advance(name):
     srand(time(NULL))
     horse[name] = horse[name] + (rand % 1)
@@ -24,5 +27,7 @@ def main():
         printTrack()
         for i in range(5):
             advance(horse[i])
-        
+        print("Press enter for another turn)
+        input()
+ 
 ```
