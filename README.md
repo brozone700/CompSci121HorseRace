@@ -4,7 +4,7 @@ UMAMUSUME
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-int TrackLength = 15
+CONST TrackLength = 15
 int KeepGoing = 0
 array horse = {0, 0, 0, 0, 0}
 def printTrack():
@@ -17,12 +17,15 @@ def printTrack():
                 else:
                     print(i)
             else:
-                
+                print(f"Horse {i} Wins!!!")
+
 def advance(name):
     srand(time(NULL))
     horse[name] = horse[name] + (rand % 1)
 
 def main():
+    print("Pick your favorite(press enter when ready)")
+    input()
     while KeepGoing > 0:
         printTrack()
         for i in range(5):
