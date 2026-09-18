@@ -1,43 +1,48 @@
 #include <iostream>
+using namespace std;
 #include <cstdlib>
 #include <ctime>
 const int TrackLength = 15;
 int KeepGoing = 0;
 int horse[5] = {0, 0, 0, 0, 0};
-int x;
 void printTrack() {
+	//A track for each horse
 	for ( int i = 0; i < 5; i++) {
 		cout << "\n";
-		for ( int j = 0; j < TrackLength; j++) {
-			if (horse[i] != TrackLength){
+		if (horse[i] != TrackLength){
+			for ( int j = 0; j < TrackLength; j++) {
 				if ( j != horse[i]) {
 					cout << ".";
 				}else{
 					cout << i;
 				}
-			} else {
-				cout << "Horse " j " wins !!!";
-				KeepGoing = 1
 			}
+		} else {
+			cout << "Horse ";
+			cout << i;
+			cout << " wins !!!";
+			KeepGoing = 1;
 		}
 	}
 }
 
-void advance(name) {
-	srand(time(NULL));
-	horse[name] = horse[name] + (rand % 1);
+void Advance( int name) {
+	horse[name] = horse[name] + (rand() % 2);
 }
 
-void main() {
+int main() {
+	srand(time(NULL));
 	printTrack();
-	cout << "Pick your favorite horse(press enter when ready to start)";
-	cin >> x;
+	cout << "\nPick your favorite horse(press enter when ready to start)";
+	cin.get();
 	while (KeepGoing < 1) {
 		for (int i = 0; i < 5; i++){
-			advance(horse[i]);
+			Advance(i);
 		}
 		printTrack();
-		cout << "Press enter for another turn";
-		cin >> x;
+		if (KeepGoing != 1){
+			cout << "\nPress enter for another turn";
+			cin.get();
+		}
 	}
 }
