@@ -7,6 +7,7 @@ const int TrackLength = 15;
 int KeepGoingGame = 0;
 int KeepGoingRace = 0;
 int horse[5] = {0, 0, 0, 0, 0};
+//random placeholder text
 std::string question = "ham";
 
 //next variables are for gambling
